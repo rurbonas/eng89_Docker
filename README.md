@@ -17,3 +17,34 @@ Docker is an open-source platform that is designed to be lightweight and simple.
 - Isolation - Containers use the same kernel so they are not completely isolated from each other
 - Networking can be tricky when we want to limit access within containers and also have proper network communications
 - Advances Quickly - Sometimes documentation change too quick, before the industry has a chance to adapt
+
+### Background 
+
+Docker is so popular today that “Docker” and “containers” are used interchangeably. But the first container-related technologies were available for years before Docker was released to the public in 2013. 
+
+Most notably, in 2008, LinuXContainers (LXC) was implemented in the Linux kernel, fully enabling virtualization for a single instance of Linux. While LXC is still used today, newer technologies using the Linux kernel are available. Ubuntu, a modern, open-source Linux operating system, also provides this capability.
+
+- Improved—and seamless—portability: While LXC containers often reference machine-specific configurations, Docker containers run without modification across any desktop, data center and cloud environment.
+
+- Even lighter weight and more granular updates: With LXC, multiple processes can be combined within a single container. With Docker containers, only one process can run in each container. This makes it possible to build an application that can continue running while one of its parts is taken down for an update or repair.
+
+- Automated container creation: Docker can automatically build a container based on application source code.
+
+- Container versioning: Docker can track versions of a container image, roll back to previous versions, and trace who built a version and how. It can even upload only the deltas between an existing version and a new one.
+
+- Container reuse: Existing containers can be used as base images—essentially like templates for building new containers.
+
+- Shared container libraries: Developers can access an open-source registry containing thousands of user-contributed containers.
+
+Docker adoption quickly exploded and continues to surge. 
+Docker Inc. reports 11 million developers and 13 billion container image downloads every month
+
+# Architecture
+
+![](monomicro.png)
+
+### Microservices
+
+While a monolithic application is a single unified unit, a microservices architecture breaks it down into a collection of smaller independent units. 
+These units carry out every application process as a separate service. 
+So all the services have their own logic and the database as well as perform the specific functions.
