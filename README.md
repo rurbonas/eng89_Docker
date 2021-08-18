@@ -48,3 +48,17 @@ Docker Inc. reports 11 million developers and 13 billion container image downloa
 While a monolithic application is a single unified unit, a microservices architecture breaks it down into a collection of smaller independent units. 
 These units carry out every application process as a separate service. 
 So all the services have their own logic and the database as well as perform the specific functions.
+
+
+# Running docker commands
+- `docker run -d -p 4000:4000 docs/docker.github.io` (`-d` detached mode, `-p` for ports)
+- After installation check `localhost:4000`
+- docker ps
+- Find the docs/docker id number
+- `alias docker="winpty docker"`
+- `docker exec -it 006c70b5600b sh` to ssh in
+- `uname`
+- `vi index.html`
+- `docker stop 006c70b5600b` to stop the application from running in the background
+- To replace a file while in running Docker container: `docker cp <src-path> <container>:<dest-path> `
+- For example `docker cp C:/Users/Urbon/Desktop/Newfolder/index.html 9b6c62956864:usr/share/nginx/html/`
