@@ -62,3 +62,35 @@ So all the services have their own logic and the database as well as perform the
 - `docker stop 006c70b5600b` to stop the application from running in the background
 - To replace a file while in running Docker container: `docker cp <src-path> <container>:<dest-path> `
 - For example `docker cp C:/Users/Urbon/Desktop/Newfolder/index.html 9b6c62956864:usr/share/nginx/html/`
+
+![](vG.png)
+### Creating and Running a Dockerfile
+- `nano Dockerfile`
+```
+# Build an image to automate the task to launch static website using nginx webserver with Docker
+
+# Building customised docker images
+# Use the official image nginx
+# Lable it with your name
+# Copy the folder/file from localhost to the container
+# Default port 80for nginx
+# CMD with the final command - i.e. `npm start'
+
+# FROM is the keyword to use the image
+FROM nginx
+
+LABEL MAINTAINER=Ron
+
+# copy folder Newfolder to the nginx default index.html location
+COPY Newfolder /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
+```
+- `docker build -t rurbon/eng89_automate_nginx .`
+- `docker images`
+- `docker run -d -p 50:80 rurbon/eng89_automate_nginx`
+- `docker push rurbon/eng89_automate_nginx`
+- in Dockerhub check the public space and we should be able to see our image there
+- `docker pull rurbon/eng89_automate_nginx`
