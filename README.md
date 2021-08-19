@@ -94,3 +94,7 @@ CMD ["nginx", "-g", "daemon off;"]
 - `docker push rurbon/eng89_automate_nginx`
 - in Dockerhub check the public space and we should be able to see our image there
 - `docker pull rurbon/eng89_automate_nginx`
+
+### Volumes allow for real-time syncing between the localhost and the container
+This command will sync any change made in the local folder to the Docker volume in the container:
+```docker run -d -v C:/Users/Urbon/Desktop/Newfolder/Newfolder:/usr/share/nginx/html -p 5000:80 rurbon/eng89_automate_nginx```
